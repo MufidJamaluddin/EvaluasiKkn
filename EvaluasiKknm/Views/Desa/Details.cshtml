@@ -1,0 +1,42 @@
+﻿@model EvaluasiKknm.Models.Desa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Desa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaDesa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaDesa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KearifanLokal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KearifanLokal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kecamatan.KodeKab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kecamatan.KodeKab)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KodeDesa }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

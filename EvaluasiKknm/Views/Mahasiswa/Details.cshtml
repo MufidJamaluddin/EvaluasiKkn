@@ -1,0 +1,58 @@
+﻿@model EvaluasiKknm.Models.Mahasiswa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mahasiswa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Jurusan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jurusan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prodi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prodi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Akun.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Akun.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KelompokKkn.KodeDesa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KelompokKkn.KodeDesa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

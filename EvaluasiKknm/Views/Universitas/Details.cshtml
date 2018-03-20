@@ -1,0 +1,26 @@
+﻿@model EvaluasiKknm.Models.Universita
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Universita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaUniv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaUniv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdUniv }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

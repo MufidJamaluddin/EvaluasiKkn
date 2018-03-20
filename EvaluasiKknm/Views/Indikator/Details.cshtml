@@ -1,0 +1,58 @@
+﻿@model EvaluasiKknm.Models.Indikator
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Indikator</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Judul)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Judul)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deskripsi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deskripsi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Konfirmasi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Konfirmasi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Akun.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Akun.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desa.KodeKec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desa.KodeKec)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

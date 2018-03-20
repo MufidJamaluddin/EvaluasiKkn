@@ -1,0 +1,66 @@
+﻿@model EvaluasiKknm.Models.KelompokKkn
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KelompokKkn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaKel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaKel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TanggalMulai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TanggalMulai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TanggalAkhir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TanggalAkhir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NIMKetua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NIMKetua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desa.KodeKec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desa.KodeKec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Universita.NamaUniv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Universita.NamaUniv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdKel }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

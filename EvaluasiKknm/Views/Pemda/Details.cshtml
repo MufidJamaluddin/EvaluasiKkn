@@ -1,0 +1,42 @@
+﻿@model EvaluasiKknm.Models.Pemda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pemda</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaLengkap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaLengkap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Akun.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Akun.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desa.KodeKec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desa.KodeKec)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

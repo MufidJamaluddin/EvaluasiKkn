@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EvaluasiKknm.Models.Kecamatan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaKec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kabupaten.KodeProv)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaKec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kabupaten.KodeProv)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KodeKec }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KodeKec }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KodeKec })
+        </td>
+    </tr>
+}
+
+</table>

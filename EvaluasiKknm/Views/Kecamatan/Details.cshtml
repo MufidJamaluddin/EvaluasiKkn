@@ -1,0 +1,34 @@
+﻿@model EvaluasiKknm.Models.Kecamatan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kecamatan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaKec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaKec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kabupaten.KodeProv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kabupaten.KodeProv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KodeKec }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

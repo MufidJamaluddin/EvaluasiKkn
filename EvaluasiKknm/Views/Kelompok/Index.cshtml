@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EvaluasiKknm.Models.KelompokKkn>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaKel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TanggalMulai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TanggalAkhir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NIMKetua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desa.KodeKec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Universita.NamaUniv)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaKel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TanggalMulai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TanggalAkhir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NIMKetua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desa.KodeKec)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Universita.NamaUniv)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdKel }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdKel }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdKel })
+        </td>
+    </tr>
+}
+
+</table>

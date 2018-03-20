@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KknModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Akun">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="254" />
+    <Property Name="Password" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Desa">
+    <Key>
+      <PropertyRef Name="KodeDesa" />
+    </Key>
+    <Property Name="KodeDesa" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="KodeKec" Type="char" MaxLength="7" />
+    <Property Name="NamaDesa" Type="varchar" MaxLength="34" />
+    <Property Name="KearifanLokal" Type="text" />
+  </EntityType>
+  <EntityType Name="DosenPembimbing">
+    <Key>
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="NIDN" />
+    </Key>
+    <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NIDN" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdKel" Type="int" />
+    <Property Name="Nama" Type="varchar" MaxLength="34" />
+  </EntityType>
+  <EntityType Name="Indikator">
+    <Key>
+      <PropertyRef Name="KodeDesa" />
+      <PropertyRef Name="IdIndikator" />
+    </Key>
+    <Property Name="KodeDesa" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdIndikator" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="25" />
+    <Property Name="Judul" Type="varchar" MaxLength="35" />
+    <Property Name="Deskripsi" Type="text" />
+    <Property Name="Konfirmasi" Type="bit" />
+  </EntityType>
+  <EntityType Name="Kabupaten">
+    <Key>
+      <PropertyRef Name="KodeKab" />
+    </Key>
+    <Property Name="KodeKab" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="KodeProv" Type="char" MaxLength="2" />
+    <Property Name="NamaKab" Type="varchar" MaxLength="34" />
+  </EntityType>
+  <EntityType Name="Kecamatan">
+    <Key>
+      <PropertyRef Name="KodeKec" />
+    </Key>
+    <Property Name="KodeKec" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="KodeKab" Type="char" MaxLength="4" />
+    <Property Name="NamaKec" Type="varchar" MaxLength="34" />
+  </EntityType>
+  <EntityType Name="KelompokKkn">
+    <Key>
+      <PropertyRef Name="IdKel" />
+    </Key>
+    <Property Name="IdKel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KodeDesa" Type="varchar" MaxLength="10" />
+    <Property Name="IdUniv" Type="int" />
+    <Property Name="NamaKel" Type="varchar" MaxLength="30" />
+    <Property Name="TanggalMulai" Type="datetime" />
+    <Property Name="TanggalAkhir" Type="datetime" />
+    <Property Name="NIMKetua" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Mahasiswa">
+    <Key>
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="NIM" />
+    </Key>
+    <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NIM" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdKel" Type="int" />
+    <Property Name="Nama" Type="varchar" MaxLength="34" />
+    <Property Name="Jurusan" Type="varchar" MaxLength="19" />
+    <Property Name="Prodi" Type="varchar" MaxLength="19" />
+  </EntityType>
+  <EntityType Name="Pemda">
+    <Key>
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="NIP" />
+    </Key>
+    <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NIP" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="KodeDesa" Type="varchar" MaxLength="10" />
+    <Property Name="NamaLengkap" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <EntityType Name="Penilaian">
+    <Key>
+      <PropertyRef Name="KodeDesa" />
+      <PropertyRef Name="IdIndikator" />
+      <PropertyRef Name="IdKel" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdPenilaian" />
+    </Key>
+    <Property Name="KodeDesa" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdIndikator" Type="int" Nullable="false" />
+    <Property Name="IdKel" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdPenilaian" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="25" />
+    <Property Name="Komentar" Type="text" />
+    <Property Name="Skor" Type="int" />
+  </EntityType>
+  <EntityType Name="Program">
+    <Key>
+      <PropertyRef Name="IdKel" />
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="IdKel" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamaProgram" Type="varchar" MaxLength="35" />
+    <Property Name="Deskripsi" Type="text" />
+    <Property Name="Realisasi" Type="bit" />
+  </EntityType>
+  <EntityType Name="Provinsi">
+    <Key>
+      <PropertyRef Name="KodeProv" />
+    </Key>
+    <Property Name="KodeProv" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="NamaProv" Type="varchar" MaxLength="34" />
+  </EntityType>
+  <EntityType Name="Universitas">
+    <Key>
+      <PropertyRef Name="IdUniv" />
+    </Key>
+    <Property Name="IdUniv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NamaUniv" Type="varchar" MaxLength="34" />
+  </EntityType>
+  <Association Name="FK_DESA_TERDIRI_D_KECAMATA">
+    <End Role="Kecamatan" Type="Self.Kecamatan" Multiplicity="0..1" />
+    <End Role="Desa" Type="Self.Desa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kecamatan">
+        <PropertyRef Name="KodeKec" />
+      </Principal>
+      <Dependent Role="Desa">
+        <PropertyRef Name="KodeKec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOSENPEM_DIBIMBING_KELOMPOK">
+    <End Role="KelompokKkn" Type="Self.KelompokKkn" Multiplicity="0..1" />
+    <End Role="DosenPembimbing" Type="Self.DosenPembimbing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KelompokKkn">
+        <PropertyRef Name="IdKel" />
+      </Principal>
+      <Dependent Role="DosenPembimbing">
+        <PropertyRef Name="IdKel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DOSENPEM_MILIK_DOS_AKUN">
+    <End Role="Akun" Type="Self.Akun" Multiplicity="1" />
+    <End Role="DosenPembimbing" Type="Self.DosenPembimbing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Akun">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="DosenPembimbing">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INDIKATO_DITULIS_O_AKUN">
+    <End Role="Akun" Type="Self.Akun" Multiplicity="0..1" />
+    <End Role="Indikator" Type="Self.Indikator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Akun">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Indikator">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_INDIKATO_MEMILIKI__DESA">
+    <End Role="Desa" Type="Self.Desa" Multiplicity="1" />
+    <End Role="Indikator" Type="Self.Indikator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Desa">
+        <PropertyRef Name="KodeDesa" />
+      </Principal>
+      <Dependent Role="Indikator">
+        <PropertyRef Name="KodeDesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KABUPATE_TERDIRI_D_PROVINSI">
+    <End Role="Provinsi" Type="Self.Provinsi" Multiplicity="0..1" />
+    <End Role="Kabupaten" Type="Self.Kabupaten" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provinsi">
+        <PropertyRef Name="KodeProv" />
+      </Principal>
+      <Dependent Role="Kabupaten">
+        <PropertyRef Name="KodeProv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KECAMATA_TERDIRI_D_KABUPATE">
+    <End Role="Kabupaten" Type="Self.Kabupaten" Multiplicity="0..1" />
+    <End Role="Kecamatan" Type="Self.Kecamatan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kabupaten">
+        <PropertyRef Name="KodeKab" />
+      </Principal>
+      <Dependent Role="Kecamatan">
+        <PropertyRef Name="KodeKab" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KELOMPOK_DIBINA_OL_DESA">
+    <End Role="Desa" Type="Self.Desa" Multiplicity="0..1" />
+    <End Role="KelompokKkn" Type="Self.KelompokKkn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Desa">
+        <PropertyRef Name="KodeDesa" />
+      </Principal>
+      <Dependent Role="KelompokKkn">
+        <PropertyRef Name="KodeDesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KELOMPOK_MENGUTUS_UNIVERSI">
+    <End Role="Universitas" Type="Self.Universitas" Multiplicity="0..1" />
+    <End Role="KelompokKkn" Type="Self.KelompokKkn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Universitas">
+        <PropertyRef Name="IdUniv" />
+      </Principal>
+      <Dependent Role="KelompokKkn">
+        <PropertyRef Name="IdUniv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MAHASISW_MILIK_MHS_AKUN">
+    <End Role="Akun" Type="Self.Akun" Multiplicity="1" />
+    <End Role="Mahasiswa" Type="Self.Mahasiswa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Akun">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Mahasiswa">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MAHASISW_OLEH_KELOMPOK">
+    <End Role="KelompokKkn" Type="Self.KelompokKkn" Multiplicity="0..1" />
+    <End Role="Mahasiswa" Type="Self.Mahasiswa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KelompokKkn">
+        <PropertyRef Name="IdKel" />
+      </Principal>
+      <Dependent Role="Mahasiswa">
+        <PropertyRef Name="IdKel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEMDA_BEKERJA_DESA">
+    <End Role="Desa" Type="Self.Desa" Multiplicity="0..1" />
+    <End Role="Pemda" Type="Self.Pemda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Desa">
+        <PropertyRef Name="KodeDesa" />
+      </Principal>
+      <Dependent Role="Pemda">
+        <PropertyRef Name="KodeDesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PEMDA_MILIK_PEM_AKUN">
+    <End Role="Akun" Type="Self.Akun" Multiplicity="1" />
+    <End Role="Pemda" Type="Self.Pemda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Akun">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Pemda">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PENILAIA_BERDASARK_INDIKATO">
+    <End Role="Indikator" Type="Self.Indikator" Multiplicity="1" />
+    <End Role="Penilaian" Type="Self.Penilaian" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Indikator">
+        <PropertyRef Name="KodeDesa" />
+        <PropertyRef Name="IdIndikator" />
+      </Principal>
+      <Dependent Role="Penilaian">
+        <PropertyRef Name="KodeDesa" />
+        <PropertyRef Name="IdIndikator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PENILAIA_DINILAI_O_AKUN">
+    <End Role="Akun" Type="Self.Akun" Multiplicity="0..1" />
+    <End Role="Penilaian" Type="Self.Penilaian" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Akun">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Penilaian">
+        <PropertyRef Name="Username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PENILAIA_DINILAI_PROGRAM">
+    <End Role="Program" Type="Self.Program" Multiplicity="1" />
+    <End Role="Penilaian" Type="Self.Penilaian" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="IdKel" />
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Penilaian">
+        <PropertyRef Name="IdKel" />
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PROGRAM_MELAKSANA_KELOMPOK">
+    <End Role="KelompokKkn" Type="Self.KelompokKkn" Multiplicity="1" />
+    <End Role="Program" Type="Self.Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KelompokKkn">
+        <PropertyRef Name="IdKel" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="IdKel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KknModelStoreContainer">
+    <EntitySet Name="Akun" EntityType="Self.Akun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Desa" EntityType="Self.Desa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DosenPembimbing" EntityType="Self.DosenPembimbing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Indikator" EntityType="Self.Indikator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kabupaten" EntityType="Self.Kabupaten" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kecamatan" EntityType="Self.Kecamatan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KelompokKkn" EntityType="Self.KelompokKkn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mahasiswa" EntityType="Self.Mahasiswa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pemda" EntityType="Self.Pemda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Penilaian" EntityType="Self.Penilaian" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Program" EntityType="Self.Program" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provinsi" EntityType="Self.Provinsi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Universitas" EntityType="Self.Universitas" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DESA_TERDIRI_D_KECAMATA" Association="Self.FK_DESA_TERDIRI_D_KECAMATA">
+      <End Role="Kecamatan" EntitySet="Kecamatan" />
+      <End Role="Desa" EntitySet="Desa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOSENPEM_DIBIMBING_KELOMPOK" Association="Self.FK_DOSENPEM_DIBIMBING_KELOMPOK">
+      <End Role="KelompokKkn" EntitySet="KelompokKkn" />
+      <End Role="DosenPembimbing" EntitySet="DosenPembimbing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DOSENPEM_MILIK_DOS_AKUN" Association="Self.FK_DOSENPEM_MILIK_DOS_AKUN">
+      <End Role="Akun" EntitySet="Akun" />
+      <End Role="DosenPembimbing" EntitySet="DosenPembimbing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INDIKATO_DITULIS_O_AKUN" Association="Self.FK_INDIKATO_DITULIS_O_AKUN">
+      <End Role="Akun" EntitySet="Akun" />
+      <End Role="Indikator" EntitySet="Indikator" />
+    </AssociationSet>
+    <AssociationSet Name="FK_INDIKATO_MEMILIKI__DESA" Association="Self.FK_INDIKATO_MEMILIKI__DESA">
+      <End Role="Desa" EntitySet="Desa" />
+      <End Role="Indikator" EntitySet="Indikator" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KABUPATE_TERDIRI_D_PROVINSI" Association="Self.FK_KABUPATE_TERDIRI_D_PROVINSI">
+      <End Role="Provinsi" EntitySet="Provinsi" />
+      <End Role="Kabupaten" EntitySet="Kabupaten" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KECAMATA_TERDIRI_D_KABUPATE" Association="Self.FK_KECAMATA_TERDIRI_D_KABUPATE">
+      <End Role="Kabupaten" EntitySet="Kabupaten" />
+      <End Role="Kecamatan" EntitySet="Kecamatan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KELOMPOK_DIBINA_OL_DESA" Association="Self.FK_KELOMPOK_DIBINA_OL_DESA">
+      <End Role="Desa" EntitySet="Desa" />
+      <End Role="KelompokKkn" EntitySet="KelompokKkn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KELOMPOK_MENGUTUS_UNIVERSI" Association="Self.FK_KELOMPOK_MENGUTUS_UNIVERSI">
+      <End Role="Universitas" EntitySet="Universitas" />
+      <End Role="KelompokKkn" EntitySet="KelompokKkn" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MAHASISW_MILIK_MHS_AKUN" Association="Self.FK_MAHASISW_MILIK_MHS_AKUN">
+      <End Role="Akun" EntitySet="Akun" />
+      <End Role="Mahasiswa" EntitySet="Mahasiswa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MAHASISW_OLEH_KELOMPOK" Association="Self.FK_MAHASISW_OLEH_KELOMPOK">
+      <End Role="KelompokKkn" EntitySet="KelompokKkn" />
+      <End Role="Mahasiswa" EntitySet="Mahasiswa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEMDA_BEKERJA_DESA" Association="Self.FK_PEMDA_BEKERJA_DESA">
+      <End Role="Desa" EntitySet="Desa" />
+      <End Role="Pemda" EntitySet="Pemda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PEMDA_MILIK_PEM_AKUN" Association="Self.FK_PEMDA_MILIK_PEM_AKUN">
+      <End Role="Akun" EntitySet="Akun" />
+      <End Role="Pemda" EntitySet="Pemda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PENILAIA_BERDASARK_INDIKATO" Association="Self.FK_PENILAIA_BERDASARK_INDIKATO">
+      <End Role="Indikator" EntitySet="Indikator" />
+      <End Role="Penilaian" EntitySet="Penilaian" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PENILAIA_DINILAI_O_AKUN" Association="Self.FK_PENILAIA_DINILAI_O_AKUN">
+      <End Role="Akun" EntitySet="Akun" />
+      <End Role="Penilaian" EntitySet="Penilaian" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PENILAIA_DINILAI_PROGRAM" Association="Self.FK_PENILAIA_DINILAI_PROGRAM">
+      <End Role="Program" EntitySet="Program" />
+      <End Role="Penilaian" EntitySet="Penilaian" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PROGRAM_MELAKSANA_KELOMPOK" Association="Self.FK_PROGRAM_MELAKSANA_KELOMPOK">
+      <End Role="KelompokKkn" EntitySet="KelompokKkn" />
+      <End Role="Program" EntitySet="Program" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

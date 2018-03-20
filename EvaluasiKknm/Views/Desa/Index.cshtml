@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EvaluasiKknm.Models.Desa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaDesa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KearifanLokal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kecamatan.KodeKab)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaDesa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KearifanLokal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kecamatan.KodeKab)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KodeDesa }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KodeDesa }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KodeDesa })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,58 @@
+﻿@model EvaluasiKknm.Models.Penilaian
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Penilaian</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Komentar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Komentar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Akun.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Akun.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Indikator.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Indikator.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program.NamaProgram)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program.NamaProgram)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
