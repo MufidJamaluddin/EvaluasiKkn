@@ -13,7 +13,7 @@ namespace EvaluasiKknm.Controllers
 {
     public class ProgramController : Controller
     {
-        private EvaluasiKknmDbContext db = new EvaluasiKknmDbContext();
+        private KknmDbContext db = new KknmDbContext();
 
         // GET: Program
         public async Task<ActionResult> Index()

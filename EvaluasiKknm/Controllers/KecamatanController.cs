@@ -12,7 +12,7 @@ namespace EvaluasiKknm.Controllers
 {
     public class KecamatanController : Controller
     {
-        private EvaluasiKknmDbContext db = new EvaluasiKknmDbContext();
+        private KknmDbContext db = new KknmDbContext();
 
         // GET: Kecamatan
         public ActionResult Index()

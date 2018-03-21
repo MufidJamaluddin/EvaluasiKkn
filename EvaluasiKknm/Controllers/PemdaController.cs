@@ -13,7 +13,7 @@ namespace EvaluasiKknm.Controllers
 {
     public class PemdaController : Controller
     {
-        private EvaluasiKknmDbContext db = new EvaluasiKknmDbContext();
+        private KknmDbContext db = new KknmDbContext();
 
         // GET: Pemda
         public async Task<ActionResult> Index()

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KknmModelStoreContainer" CdmEntityContainer="KknmDbContext">
+    <EntitySetMapping Name="Akuns">
+      <EntityTypeMapping TypeName="KknmModel.Akun">
+        <MappingFragment StoreEntitySet="Akun">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Desas">
+      <EntityTypeMapping TypeName="KknmModel.Desa">
+        <MappingFragment StoreEntitySet="Desa">
+          <ScalarProperty Name="KodeDesa" ColumnName="KodeDesa" />
+          <ScalarProperty Name="KodeKec" ColumnName="KodeKec" />
+          <ScalarProperty Name="NamaDesa" ColumnName="NamaDesa" />
+          <ScalarProperty Name="KearifanLokal" ColumnName="KearifanLokal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DosenPembimbings">
+      <EntityTypeMapping TypeName="KknmModel.DosenPembimbing">
+        <MappingFragment StoreEntitySet="DosenPembimbing">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="NIDN" ColumnName="NIDN" />
+          <ScalarProperty Name="IdKel" ColumnName="IdKel" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Indikators">
+      <EntityTypeMapping TypeName="KknmModel.Indikator">
+        <MappingFragment StoreEntitySet="Indikator">
+          <ScalarProperty Name="KodeDesa" ColumnName="KodeDesa" />
+          <ScalarProperty Name="IdIndikator" ColumnName="IdIndikator" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Judul" ColumnName="Judul" />
+          <ScalarProperty Name="Deskripsi" ColumnName="Deskripsi" />
+          <ScalarProperty Name="Konfirmasi" ColumnName="Konfirmasi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kabupatens">
+      <EntityTypeMapping TypeName="KknmModel.Kabupaten">
+        <MappingFragment StoreEntitySet="Kabupaten">
+          <ScalarProperty Name="KodeKab" ColumnName="KodeKab" />
+          <ScalarProperty Name="KodeProv" ColumnName="KodeProv" />
+          <ScalarProperty Name="NamaKab" ColumnName="NamaKab" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kecamatans">
+      <EntityTypeMapping TypeName="KknmModel.Kecamatan">
+        <MappingFragment StoreEntitySet="Kecamatan">
+          <ScalarProperty Name="KodeKec" ColumnName="KodeKec" />
+          <ScalarProperty Name="KodeKab" ColumnName="KodeKab" />
+          <ScalarProperty Name="NamaKec" ColumnName="NamaKec" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KelompokKkns">
+      <EntityTypeMapping TypeName="KknmModel.KelompokKkn">
+        <MappingFragment StoreEntitySet="KelompokKkn">
+          <ScalarProperty Name="IdKel" ColumnName="IdKel" />
+          <ScalarProperty Name="KodeDesa" ColumnName="KodeDesa" />
+          <ScalarProperty Name="IdUniv" ColumnName="IdUniv" />
+          <ScalarProperty Name="NamaKel" ColumnName="NamaKel" />
+          <ScalarProperty Name="TanggalMulai" ColumnName="TanggalMulai" />
+          <ScalarProperty Name="TanggalAkhir" ColumnName="TanggalAkhir" />
+          <ScalarProperty Name="NIMKetua" ColumnName="NIMKetua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Komentars">
+      <EntityTypeMapping TypeName="KknmModel.Komentar">
+        <MappingFragment StoreEntitySet="Komentar">
+          <ScalarProperty Name="IdPenilaian" ColumnName="IdPenilaian" />
+          <ScalarProperty Name="IdKomentar" ColumnName="IdKomentar" />
+          <ScalarProperty Name="DescKomentar" ColumnName="DescKomentar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mahasiswas">
+      <EntityTypeMapping TypeName="KknmModel.Mahasiswa">
+        <MappingFragment StoreEntitySet="Mahasiswa">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="NIM" ColumnName="NIM" />
+          <ScalarProperty Name="IdKel" ColumnName="IdKel" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+          <ScalarProperty Name="Jurusan" ColumnName="Jurusan" />
+          <ScalarProperty Name="Prodi" ColumnName="Prodi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pemdas">
+      <EntityTypeMapping TypeName="KknmModel.Pemda">
+        <MappingFragment StoreEntitySet="Pemda">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="NIP" ColumnName="NIP" />
+          <ScalarProperty Name="KodeDesa" ColumnName="KodeDesa" />
+          <ScalarProperty Name="NamaLengkap" ColumnName="NamaLengkap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Penilaians">
+      <EntityTypeMapping TypeName="KknmModel.Penilaian">
+        <MappingFragment StoreEntitySet="Penilaian">
+          <ScalarProperty Name="IdPenilaian" ColumnName="IdPenilaian" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="KodeDesa" ColumnName="KodeDesa" />
+          <ScalarProperty Name="IdIndikator" ColumnName="IdIndikator" />
+          <ScalarProperty Name="IdKel" ColumnName="IdKel" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Alasan" ColumnName="Alasan" />
+          <ScalarProperty Name="Skor" ColumnName="Skor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programs">
+      <EntityTypeMapping TypeName="KknmModel.Program">
+        <MappingFragment StoreEntitySet="Program">
+          <ScalarProperty Name="IdKel" ColumnName="IdKel" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NamaProgram" ColumnName="NamaProgram" />
+          <ScalarProperty Name="Deskripsi" ColumnName="Deskripsi" />
+          <ScalarProperty Name="Realisasi" ColumnName="Realisasi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinsis">
+      <EntityTypeMapping TypeName="KknmModel.Provinsi">
+        <MappingFragment StoreEntitySet="Provinsi">
+          <ScalarProperty Name="KodeProv" ColumnName="KodeProv" />
+          <ScalarProperty Name="NamaProv" ColumnName="NamaProv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Universitas">
+      <EntityTypeMapping TypeName="KknmModel.Universita">
+        <MappingFragment StoreEntitySet="Universitas">
+          <ScalarProperty Name="IdUniv" ColumnName="IdUniv" />
+          <ScalarProperty Name="NamaUniv" ColumnName="NamaUniv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

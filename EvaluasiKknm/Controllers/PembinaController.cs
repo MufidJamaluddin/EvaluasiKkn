@@ -12,7 +12,7 @@ namespace EvaluasiKknm.Controllers
 {
     public class PembinaController : Controller
     {
-        private EvaluasiKknmDbContext db = new EvaluasiKknmDbContext();
+        private KknmDbContext db = new KknmDbContext();
 
         // GET: Pembina
         public ActionResult Index()

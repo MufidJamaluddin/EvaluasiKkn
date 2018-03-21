@@ -14,17 +14,25 @@ namespace EvaluasiKknm.Models
     
     public partial class Penilaian
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Penilaian()
+        {
+            this.Komentars = new HashSet<Komentar>();
+        }
+    
+        public int IdPenilaian { get; set; }
+        public string Username { get; set; }
         public string KodeDesa { get; set; }
         public int IdIndikator { get; set; }
         public int IdKel { get; set; }
         public int Id { get; set; }
-        public int IdPenilaian { get; set; }
-        public string Username { get; set; }
-        public string Komentar { get; set; }
+        public string Alasan { get; set; }
         public Nullable<int> Skor { get; set; }
     
         public virtual Akun Akun { get; set; }
         public virtual Indikator Indikator { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Komentar> Komentars { get; set; }
         public virtual Program Program { get; set; }
     }
 }

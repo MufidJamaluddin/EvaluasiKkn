@@ -168,83 +168,81 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DesaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IndikatorController.cs" />
     <Compile Include="Controllers\KecamatanController.cs" />
     <Compile Include="Controllers\KelompokController.cs" />
     <Compile Include="Controllers\MahasiswaController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PembinaController.cs" />
     <Compile Include="Controllers\PemdaController.cs" />
     <Compile Include="Controllers\PenggunaController.cs" />
-    <Compile Include="Controllers\PenilaianController.cs" />
     <Compile Include="Controllers\ProgramController.cs" />
     <Compile Include="Controllers\UniversitasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Controllers\IndikatorController.cs" />
+    <Compile Include="Controllers\KomentarController.cs" />
     <Compile Include="Models\Akun.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Desa.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DosenPembimbing.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EvaluasiKknmDbContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EvaluasiKknmDbContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EvaluasiKknmDbContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EvaluasiKknmDbContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EvaluasiKknmDbContext.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Indikator.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Kabupaten.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Kecamatan.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KelompokKkn.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KknmDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KknmDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KknmDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KknmDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KknmDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Komentar.cs">
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Mahasiswa.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Pemda.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Penilaian.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Program.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Provinsi.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Universita.cs">
-      <DependentUpon>EvaluasiKknmDbContext.tt</DependentUpon>
+      <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\PenilaianController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -258,23 +256,16 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\EvaluasiKknmDbContext.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EvaluasiKknmDbContext.edmx</DependentUpon>
-      <LastGenOutput>EvaluasiKknmDbContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\EvaluasiKknmDbContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EvaluasiKknmDbContext.edmx</DependentUpon>
-      <LastGenOutput>EvaluasiKknmDbContext.cs</LastGenOutput>
-    </Content>
     <Content Include="ClassDiagram1.cd" />
-    <EntityDeploy Include="Models\EvaluasiKknmDbContext.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EvaluasiKknmDbContext.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EvaluasiKknmDbContext.edmx.diagram">
-      <DependentUpon>EvaluasiKknmDbContext.edmx</DependentUpon>
+    <Content Include="Models\KknmDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KknmDbContext.edmx</DependentUpon>
+      <LastGenOutput>KknmDbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\KknmDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KknmDbContext.edmx</DependentUpon>
+      <LastGenOutput>KknmDbContext.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -298,6 +289,13 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <EntityDeploy Include="Models\KknmDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KknmDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\KknmDbContext.edmx.diagram">
+      <DependentUpon>KknmDbContext.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -336,24 +334,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Pengguna\Create.cshtml" />
@@ -381,16 +361,6 @@
     <Content Include="Views\Desa\Details.cshtml" />
     <Content Include="Views\Desa\Edit.cshtml" />
     <Content Include="Views\Desa\Index.cshtml" />
-    <Content Include="Views\Indikator\Create.cshtml" />
-    <Content Include="Views\Indikator\Delete.cshtml" />
-    <Content Include="Views\Indikator\Details.cshtml" />
-    <Content Include="Views\Indikator\Edit.cshtml" />
-    <Content Include="Views\Indikator\Index.cshtml" />
-    <Content Include="Views\Penilaian\Create.cshtml" />
-    <Content Include="Views\Penilaian\Delete.cshtml" />
-    <Content Include="Views\Penilaian\Details.cshtml" />
-    <Content Include="Views\Penilaian\Edit.cshtml" />
-    <Content Include="Views\Penilaian\Index.cshtml" />
     <Content Include="Views\Program\Create.cshtml" />
     <Content Include="Views\Program\Delete.cshtml" />
     <Content Include="Views\Program\Details.cshtml" />
@@ -420,6 +390,21 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Indikator\Create.cshtml" />
+    <Content Include="Views\Indikator\Delete.cshtml" />
+    <Content Include="Views\Indikator\Details.cshtml" />
+    <Content Include="Views\Indikator\Edit.cshtml" />
+    <Content Include="Views\Indikator\Index.cshtml" />
+    <Content Include="Views\Penilaian\Create.cshtml" />
+    <Content Include="Views\Penilaian\Delete.cshtml" />
+    <Content Include="Views\Penilaian\Details.cshtml" />
+    <Content Include="Views\Penilaian\Edit.cshtml" />
+    <Content Include="Views\Penilaian\Index.cshtml" />
+    <Content Include="Views\Komentar\Create.cshtml" />
+    <Content Include="Views\Komentar\Delete.cshtml" />
+    <Content Include="Views\Komentar\Details.cshtml" />
+    <Content Include="Views\Komentar\Edit.cshtml" />
+    <Content Include="Views\Komentar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

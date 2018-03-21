@@ -9,11 +9,11 @@ using System.Web;
 using System.Web.Mvc;
 using EvaluasiKknm.Models;
 
-namespace EvaluasiKknm.Controllers
+namespace EvaluasiKknm
 {
     public class PenilaianController : Controller
     {
-        private EvaluasiKknmDbContext db = new EvaluasiKknmDbContext();
+        private KknmDbContext db = new KknmDbContext();
 
         // GET: Penilaian
         public async Task<ActionResult> Index()
@@ -23,7 +23,7 @@ namespace EvaluasiKknm.Controllers
         }
 
         // GET: Penilaian/Details/5
-        public async Task<ActionResult> Details(string id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -51,7 +51,7 @@ namespace EvaluasiKknm.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "KodeDesa,IdIndikator,IdKel,Id,IdPenilaian,Username,Komentar,Skor")] Penilaian penilaian)
+        public async Task<ActionResult> Create([Bind(Include = "IdPenilaian,Username,KodeDesa,IdIndikator,IdKel,Id,Alasan,Skor")] Penilaian penilaian)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace EvaluasiKknm.Controllers
         }
 
         // GET: Penilaian/Edit/5
-        public async Task<ActionResult> Edit(string id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -89,7 +89,7 @@ namespace EvaluasiKknm.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "KodeDesa,IdIndikator,IdKel,Id,IdPenilaian,Username,Komentar,Skor")] Penilaian penilaian)
+        public async Task<ActionResult> Edit([Bind(Include = "IdPenilaian,Username,KodeDesa,IdIndikator,IdKel,Id,Alasan,Skor")] Penilaian penilaian)
         {
             if (ModelState.IsValid)
             {
@@ -104,7 +104,7 @@ namespace EvaluasiKknm.Controllers
         }
 
         // GET: Penilaian/Delete/5
-        public async Task<ActionResult> Delete(string id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -121,7 +121,7 @@ namespace EvaluasiKknm.Controllers
         // POST: Penilaian/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(string id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             Penilaian penilaian = await db.Penilaians.FindAsync(id);
             db.Penilaians.Remove(penilaian);

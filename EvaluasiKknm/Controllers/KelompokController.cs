@@ -13,7 +13,7 @@ namespace EvaluasiKknm.Controllers
 {
     public class KelompokController : Controller
     {
-        private EvaluasiKknmDbContext db = new EvaluasiKknmDbContext();
+        private KknmDbContext db = new KknmDbContext();
 
         // GET: Kelompok
         public async Task<ActionResult> Index()

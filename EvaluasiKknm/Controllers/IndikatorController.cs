@@ -9,11 +9,11 @@ using System.Web;
 using System.Web.Mvc;
 using EvaluasiKknm.Models;
 
-namespace EvaluasiKknm.Controllers
+namespace EvaluasiKknm
 {
     public class IndikatorController : Controller
     {
-        private EvaluasiKknmDbContext db = new EvaluasiKknmDbContext();
+        private KknmDbContext db = new KknmDbContext();
 
         // GET: Indikator
         public async Task<ActionResult> Index()

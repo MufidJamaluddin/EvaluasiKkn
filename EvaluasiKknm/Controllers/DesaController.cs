@@ -13,7 +13,7 @@ namespace EvaluasiKknm.Controllers
 {
     public class DesaController : Controller
     {
-        private EvaluasiKknmDbContext db = new EvaluasiKknmDbContext();
+        private KknmDbContext db = new KknmDbContext();
 
         // GET: Desa
         public async Task<ActionResult> Index()

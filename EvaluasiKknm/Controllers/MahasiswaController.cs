@@ -12,7 +12,7 @@ namespace EvaluasiKknm.Controllers
 {
     public class MahasiswaController : Controller
     {
-        private EvaluasiKknmDbContext db = new EvaluasiKknmDbContext();
+        private KknmDbContext db = new KknmDbContext();
 
         // GET: Mahasiswa
         public ActionResult Index()

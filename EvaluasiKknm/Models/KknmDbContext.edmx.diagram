@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="05c3b60d6c6d44e2817b0cae3163f01d" Name="Diagram1">
+        <EntityTypeShape EntityType="KknmModel.Akun" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Desa" Width="1.5" PointX="7.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.DosenPembimbing" Width="1.5" PointX="15" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Indikator" Width="1.5" PointX="9.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Kabupaten" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Kecamatan" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.KelompokKkn" Width="1.5" PointX="12.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Komentar" Width="1.5" PointX="19.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Mahasiswa" Width="1.5" PointX="18" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Pemda" Width="1.5" PointX="9.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Penilaian" Width="1.5" PointX="17.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Program" Width="1.5" PointX="15" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Provinsi" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KknmModel.Universita" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="KknmModel.FK_DOSENPEM_MILIK_DOS_AKUN" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_INDIKATO_DITULIS_O_AKUN" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_MAHASISW_MILIK_MHS_AKUN" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_PEMDA_MILIK_PEM_AKUN" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_PENILAIA_DINILAI_O_AKUN" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_DESA_TERDIRI_D_KECAMATA" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_INDIKATO_MEMILIKI__DESA" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_KELOMPOK_DIBINA_OL_DESA" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_PEMDA_BEKERJA_DESA" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_DOSENPEM_DIBIMBING_KELOMPOK" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_PENILAIA_BERDASARK_INDIKATO" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_KABUPATE_TERDIRI_D_PROVINSI" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_KECAMATA_TERDIRI_D_KABUPATE" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_KELOMPOK_MENGUTUS_UNIVERSI" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_MAHASISW_OLEH_KELOMPOK" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_PROGRAM_MELAKSANA_KELOMPOK" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_KOMENTAR_KNOWLEDGE_PENILAIA" ManuallyRouted="false" />
+        <AssociationConnector Association="KknmModel.FK_PENILAIA_DINILAI_PROGRAM" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
