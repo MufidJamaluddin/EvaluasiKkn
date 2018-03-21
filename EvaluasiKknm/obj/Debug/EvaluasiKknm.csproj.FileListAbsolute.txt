@@ -64,6 +64,6 @@ D:\Proyek Visual Studio\EvaluasiKknm\EvaluasiKknm\bin\Microsoft.Owin.Security.OA
 D:\Proyek Visual Studio\EvaluasiKknm\EvaluasiKknm\bin\Microsoft.Owin.Security.Google.xml
 D:\Proyek Visual Studio\EvaluasiKknm\EvaluasiKknm\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Proyek Visual Studio\EvaluasiKknm\EvaluasiKknm\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Proyek Visual Studio\EvaluasiKknm\EvaluasiKknm\obj\Debug\EvaluasiKknm.csprojResolveAssemblyReference.cache
 D:\Proyek Visual Studio\EvaluasiKknm\EvaluasiKknm\obj\Debug\EvaluasiKknm.dll
 D:\Proyek Visual Studio\EvaluasiKknm\EvaluasiKknm\obj\Debug\EvaluasiKknm.pdb
-D:\Proyek Visual Studio\EvaluasiKknm\EvaluasiKknm\obj\Debug\EvaluasiKknm.csprojResolveAssemblyReference.cache

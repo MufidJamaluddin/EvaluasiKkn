@@ -9,136 +9,109 @@ using System.Web;
 using System.Web.Mvc;
 using EvaluasiKknm.Models;
 
-namespace EvaluasiKknm.Controllers
+namespace EvaluasiKknm
 {
-    public class DesaController : Controller
+    public class AccountController : Controller
     {
         private KknmDbContext db = new KknmDbContext();
 
-        // GET: Desa
+        // GET: Account
         public async Task<ActionResult> Index()
         {
-            var desas = db.Desas.Include(d => d.Kecamatan);
-            return View(await desas.ToListAsync());
+            return View(await db.Akuns.ToListAsync());
         }
 
-        // GET: Desa/Details/5
+        // GET: Account/Details/5
         public async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Desa desa = await db.Desas.FindAsync(id);
-            if (desa == null)
+            Akun akun = await db.Akuns.FindAsync(id);
+            if (akun == null)
             {
                 return HttpNotFound();
             }
-            return View(desa);
+            return View(akun);
         }
 
-        // GET:
-        public async Task<ActionResult> Profil(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            Desa desa = await db.Desas.FindAsync(id);
-            List<Indikator> indikators = await db.Indikators.Where(x => x.KodeDesa == id).ToListAsync();
-
-            if (desa == null)
-            {
-                return HttpNotFound();
-            }
-
-            ViewBag.desa = desa;
-            ViewBag.indikators = indikators;
-
-            return View();
-        }
-
-        // GET: Desa/Create
+        // GET: Account/Create
         public ActionResult Create()
         {
-            ViewBag.KodeKec = new SelectList(db.Kecamatans, "KodeKec", "KodeKab");
             return View();
         }
 
-        // POST: Desa/Create
+        // POST: Account/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "KodeDesa,KodeKec,NamaDesa,KearifanLokal")] Desa desa)
+        public async Task<ActionResult> Create([Bind(Include = "Username,Email,Password")] Akun akun)
         {
             if (ModelState.IsValid)
             {
-                db.Desas.Add(desa);
+                db.Akuns.Add(akun);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.KodeKec = new SelectList(db.Kecamatans, "KodeKec", "KodeKab", desa.KodeKec);
-            return View(desa);
+            return View(akun);
         }
 
-        // GET: Desa/Edit/5
+        // GET: Account/Edit/5
         public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Desa desa = await db.Desas.FindAsync(id);
-            if (desa == null)
+            Akun akun = await db.Akuns.FindAsync(id);
+            if (akun == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.KodeKec = new SelectList(db.Kecamatans, "KodeKec", "KodeKab", desa.KodeKec);
-            return View(desa);
+            return View(akun);
         }
 
-        // POST: Desa/Edit/5
+        // POST: Account/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "KodeDesa,KodeKec,NamaDesa,KearifanLokal")] Desa desa)
+        public async Task<ActionResult> Edit([Bind(Include = "Username,Email,Password")] Akun akun)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(desa).State = EntityState.Modified;
+                db.Entry(akun).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.KodeKec = new SelectList(db.Kecamatans, "KodeKec", "KodeKab", desa.KodeKec);
-            return View(desa);
+            return View(akun);
         }
 
-        // GET: Desa/Delete/5
+        // GET: Account/Delete/5
         public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Desa desa = await db.Desas.FindAsync(id);
-            if (desa == null)
+            Akun akun = await db.Akuns.FindAsync(id);
+            if (akun == null)
             {
                 return HttpNotFound();
             }
-            return View(desa);
+            return View(akun);
         }
 
-        // POST: Desa/Delete/5
+        // POST: Account/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
-            Desa desa = await db.Desas.FindAsync(id);
-            db.Desas.Remove(desa);
+            Akun akun = await db.Akuns.FindAsync(id);
+            db.Akuns.Remove(akun);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

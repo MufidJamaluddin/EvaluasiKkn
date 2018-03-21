@@ -9,40 +9,34 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Evaluasi KKNM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Desa", "Index", "Desa")</li>
-                    <li>@Html.ActionLink("Pemda", "Index", "Pemda")</li>
-                    <li>@Html.ActionLink("Pengguna", "Index", "Pengguna")</li>
-                    <li>@Html.ActionLink("Universitas", "Universitas", "Universitas")</li>
-                    <li>@Html.ActionLink("Kelompok", "Index", "Kelompok")</li>
-                    <li>@Html.ActionLink("Pembina", "Index", "Pembina")</li>
-                    <li>@Html.ActionLink("Mahasiswa", "Index", "Mahasiswa")</li>
-                    <li>@Html.ActionLink("Indikator", "Index", "Indikator")</li>
-                    <li>@Html.ActionLink("Penilaian", "Index", "Penilaian")</li>
-                    <li>@Html.ActionLink("Program", "Index", "Program")</li>
-                </ul>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        @Html.ActionLink("Evaluasi KKNM", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                @Html.ActionLink("Home", "Index", "Home", new { @class = "nav-item, nav-link, active" })
+                @Html.ActionLink("Desa", "Index", "Desa", new { @class = "nav-item, nav-link" })
+                @Html.ActionLink("Pemda", "Index", "Pemda", new { @class = "nav-item, nav-link" })
+                @Html.ActionLink("Pengguna", "Index", "Pengguna", new { @class = "nav-item, nav-link" })
+                @Html.ActionLink("Universitas", "Universitas", "Universitas", new { @class = "nav-item, nav-link" })
+                @Html.ActionLink("Kelompok", "Index", "Kelompok", new { @class = "nav-item, nav-link" })
+                @Html.ActionLink("Pembina", "Index", "Pembina", new { @class = "nav-item, nav-link" })
+                @Html.ActionLink("Mahasiswa", "Index", "Mahasiswa", new { @class = "nav-item, nav-link" })
+                @Html.ActionLink("Indikator", "Index", "Indikator", new { @class = "nav-item, nav-link" })
+                @Html.ActionLink("Penilaian", "Index", "Penilaian", new { @class = "nav-item, nav-link" })
+                @Html.ActionLink("Program", "Index", "Program", new { @class = "nav-item, nav-link" })
             </div>
         </div>
-    </div>
+    </nav>
     
     @RenderBody()
-  
-    <div class="container">
-        <hr />
+
+    <div class="container-fluid background-2">
         <footer>
-            <p>&copy; @DateTime.Now.Year - Evaluasi KKNM</p>
+            <p class="text-center" style="padding:20px">&copy; @DateTime.Now.Year - Evaluasi KKNM</p>
         </footer>
     </div>
 

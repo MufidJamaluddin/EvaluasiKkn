@@ -29,12 +29,32 @@ namespace EvaluasiKknm
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Indikator indikator = await db.Indikators.FindAsync(id);
+
             if (indikator == null)
             {
                 return HttpNotFound();
             }
             return View(indikator);
+        }
+
+        // GET: Indikator/Details/5
+        public async Task<ActionResult> Desa(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Indikator indikator = await db.Indikators.FindAsync(id);
+
+            if (indikator == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View();
         }
 
         // GET: Indikator/Create
