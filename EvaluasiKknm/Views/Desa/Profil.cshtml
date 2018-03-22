@@ -7,17 +7,18 @@
 }
 
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top:90px">
 
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 mx-auto">
             <h2 style="text-center">DESA @desa.NamaDesa</h2>
             @Html.Raw(@desa.KearifanLokal);
         </div>
         <div class="col-md-8 mx-auto">
+            <h3>Capaian</h3>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Judul</th>
+                        <th scope="col">Indikator</th>
                         <th scope="col">Deskripsi</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -27,12 +28,14 @@
                     {
                         <tr>
                             <td>@indikator.Judul</td>
-                        </tr>
-                        <tr>
                             <td>@indikator.Deskripsi</td>
-                        </tr>
-                        <tr>
-                            <td><button class="btn btn-primary">Lihat</button></td>
+                            <td>
+                                @using (Html.BeginForm("Indikator", "Desa", FormMethod.Get))
+                                {
+                                    <input name="IdIndikator" value="@indikator.IdIndikator" type="hidden"/>
+                                    <button type="submit" class="btn btn-primary">Lihat</button>
+                                }
+                            </td>
                         </tr>
                     }
 

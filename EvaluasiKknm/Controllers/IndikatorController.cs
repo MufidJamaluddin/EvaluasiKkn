@@ -11,6 +11,14 @@ using EvaluasiKknm.Models;
 
 namespace EvaluasiKknm
 {
+    public class ProfilDesa
+    {
+        public string nm_kelompok { get; set; }
+        public string nm_program { get; set; }
+        public int skor { get; set; }
+      
+    }
+
     public class IndikatorController : Controller
     {
         private KknmDbContext db = new KknmDbContext();
@@ -48,13 +56,26 @@ namespace EvaluasiKknm
             }
 
             Indikator indikator = await db.Indikators.FindAsync(id);
+            int ids = Int32.Parse(id);
+            ProfilDesa profilDesa = new ProfilDesa();
+
+            using (db)
+            {
+                var initquery = db.Indikators.Where(x => x.IdIndikator == ids);
+                profilDesa.nm_kelompok = initquery?.SingleOrDefault().Penilaians?.SingleOrDefault()?.Akun?.Mahasiswas?.SingleOrDefault()?.KelompokKkn?.NamaKel ?? "";
+                profilDesa.nm_program = initquery?.SingleOrDefault()?.Penilaians?.SingleOrDefault()?.Program?.NamaProgram ?? "";
+                profilDesa.skor = initquery?.SingleOrDefault()?.Penilaians?.SingleOrDefault()?.Skor ?? 0;
+            }
 
             if (indikator == null)
             {
-                return HttpNotFound();
+                 return HttpNotFound();
             }
 
-            return View();
+            ViewBag.indikator = indikator;
+            ViewBag.profilDesa = profilDesa;
+
+           return View();
         }
 
         // GET: Indikator/Create

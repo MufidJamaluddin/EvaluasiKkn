@@ -1,25 +1,43 @@
-﻿
+﻿@using EvaluasiKknm.Controllers
+@using EvaluasiKknm.Models
 
-<div class="container-fluid">
+@{
+    ViewBag.Title = "Indikator";
+    Indikator indikator = ViewBag.indikator;
+}
+
+
+<div class="container">
     <div class="row">
-        <h2>Details</h2>
 
-        <div>
-            <h2>Indikator </h2>
-
+        <div class="col-md-8 mx-auto">
+            <h2 style="text-center">Indikator @indikator.Judul</h2>
+            <p>
+                @indikator.Deskripsi;
+            </p>
         </div>
-        <div>
+        <div class="col-md-8 mx-auto">
+            <h3>Capaian</h3>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Judul</th>
-                        <th scope="col">Deskripsi</th>
+                        <th scope="col">Nama Kelompok</th>
+                        <th scope="col">Nama Program</th>
+                        <th scope="col">Skor</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-          
-                   
+                    @foreach (ProfilDesa profilDesa in ViewBag.profilDesa)
+                    {
+                        <tr>
+                            <td>@profilDesa.nm_kelompok</td>
+                            <td>@profilDesa.nm_program</td>
+                            <td>@profilDesa.skor</td>
+                            <td><button class="btn btn-primary">Lihat</button></td>
+                        </tr>
+                    }
+
                 </tbody>
             </table>
 

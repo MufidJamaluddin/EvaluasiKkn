@@ -1,58 +1,50 @@
-﻿@model EvaluasiKknm.Models.Penilaian
-
+﻿@using EvaluasiKknm.Models;
 @{
     ViewBag.Title = "Details";
+    Penilaian penilaian = ViewBag.penilaian;
+    List<Komentar> komentars = ViewBag.komentars;
 }
 
-<h2>Details</h2>
+<section>
+    <div class="container">
+        <div class="row" style="margin-top:80px">
 
-<div>
-    <h4>Penilaian</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Alasan)
-        </dt>
+            <div class="col-md-8 mx-auto">
+                <h2 style="text-center"> Penilaian </h2><br/>
+                <a> Skor @penilaian.Skor</a><br/>
+                <a> Deskripsi @penilaian.Alasan</a><br/>
+                <a> Pengusul : Mufid Jamaluddin</a><br/>
+            </div>
+        
+        </div>
+        <div class="row">
 
-        <dd>
-            @Html.DisplayFor(model => model.Alasan)
-        </dd>
+            @foreach (Komentar komentar in ViewBag.komentars)
+            {
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Skor)
-        </dt>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text">@komentar.DescKomentar</p>
+                    </div>
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Skor)
-        </dd>
+            }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Akun.Email)
-        </dt>
+        </div>
+        <div class="row">
 
-        <dd>
-            @Html.DisplayFor(model => model.Akun.Email)
-        </dd>
+            <div class="col-md-8 mx-auto">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Indikator.Username)
-        </dt>
+                <form accept-charset="utf-8">
+                    <div class="form-group">
+                        <label for="desk">Tambahkan Komentar</label>
+                        <textarea class="form-control summernote" id="desk" type="text" aria-describedby="desk"></textarea>
+                    </div>
+                    <button class="btn btn-dark">Tambahkan</button>
+                </form>
 
-        <dd>
-            @Html.DisplayFor(model => model.Indikator.Username)
-        </dd>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Program.NamaProgram)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Program.NamaProgram)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdPenilaian }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </div>
+    </div>
+</section>

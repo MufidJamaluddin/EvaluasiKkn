@@ -22,6 +22,11 @@ namespace EvaluasiKknm.Controllers
             return View(await kelompokKkns.ToListAsync());
         }
 
+        public ActionResult Profil()
+        {
+            return View();
+        }
+
         // GET: Kelompok/Details/5
         public async Task<ActionResult> Details(int? id)
         {

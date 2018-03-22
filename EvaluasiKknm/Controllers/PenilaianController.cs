@@ -29,12 +29,20 @@ namespace EvaluasiKknm
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Penilaian penilaian = await db.Penilaians.FindAsync(id);
+
+            Penilaian penilaian = await db.Penilaians.Where(x => x.IdPenilaian == id.Value).SingleAsync();
+
+            List<Komentar> komentars = await db.Komentars.Where(x => x.IdPenilaian == id.Value).ToListAsync();
+
             if (penilaian == null)
             {
                 return HttpNotFound();
             }
-            return View(penilaian);
+
+            ViewBag.penilaian = penilaian;
+            ViewBag.komentars = komentars;
+
+            return View();
         }
 
         // GET: Penilaian/Create

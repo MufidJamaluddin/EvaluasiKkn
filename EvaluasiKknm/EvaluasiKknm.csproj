@@ -166,7 +166,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -195,9 +195,12 @@
     <Compile Include="Models\DosenPembimbing.cs">
       <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\Indikator.cs">
       <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\IndikatorV.cs" />
     <Compile Include="Models\Kabupaten.cs">
       <DependentUpon>KknmDbContext.tt</DependentUpon>
     </Compile>
@@ -254,10 +257,13 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\summernote-bs4.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ClassDiagram1.cd" />
+    <Content Include="Images\ImageMetaData.xml" />
+    <Content Include="Images\pertanian-sawah.jpg" />
     <Content Include="Models\KknmDbContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>KknmDbContext.edmx</DependentUpon>
@@ -319,6 +325,7 @@
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\summernote-bs4.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
@@ -395,7 +402,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Indikator\Create.cshtml" />
-    <Content Include="Views\Indikator\Delete.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Indikator\Details.cshtml" />
     <Content Include="Views\Indikator\Edit.cshtml" />
     <Content Include="Views\Indikator\Index.cshtml" />
@@ -416,9 +423,12 @@
     <Content Include="Views\Account\Details.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Kelompok\Profil.cshtml" />
+    <Content Include="Views\Desa\Indikator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

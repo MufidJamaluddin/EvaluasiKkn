@@ -1,0 +1,78 @@
+﻿@using EvaluasiKknm.Models;
+@{
+    ViewBag.Title = "Indikator";
+    Indikator indikator = ViewBag.indikator;
+}
+
+
+<section>
+    <div class="container">
+        <div class="row" style="margin-top:90px">
+
+            <h3>Indikator @indikator.Judul</h3>
+
+            <p class="lead text-justify">
+                @indikator.Deskripsi;
+            </p>
+
+        </div>
+        <div class="row">
+
+            <h5 class="text-center">
+                Anggota
+            </h5>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Nama Kelompok
+                        </th>
+                        <th>
+                            Nama Program
+                        </th>
+                        <th>
+                            Skor
+                        </th>
+                        <th>
+                            Deskripsi Skor
+                        </th>
+                        <th>
+                            Aksi
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var shift in ViewBag.penilaian)
+                    {
+                    <tr>
+                        <td>
+                            @(shift.NamaKel)
+                        </td>
+                        <td>
+                            @(shift.NamaProgram)
+                        </td>
+                        <td>
+                            @(shift.Skor)
+                        </td>
+                        <td>
+                            @(shift.Alasan)
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("Details", "Penilaian", FormMethod.Get))
+                            {
+                                <input name="IdIndikator" value="@shift.IdPenilaian" type="hidden" />
+                                    <button type="submit" class="btn btn-primary">Lihat</button>
+                            }
+                        </td>
+
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+

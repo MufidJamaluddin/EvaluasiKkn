@@ -37,6 +37,27 @@ namespace EvaluasiKknm.Controllers
             return View(desa);
         }
 
+        public async Task<ActionResult> Indikator()
+        {
+            int IdIndikator = -1;
+
+            Int32.TryParse(Request.QueryString["IdIndikator"], out IdIndikator);
+
+            if (IdIndikator == -1)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Indikator indikator = await db.Indikators.Where(x => x.IdIndikator == IdIndikator).FirstOrDefaultAsync();
+
+            List<IndikatorV> penilaian = await db.Penilaians.Where(x => x.IdIndikator == IdIndikator).Select(x => new IndikatorV { NamaProgram = x.Program.NamaProgram, NamaKel = x.Program.KelompokKkn.NamaKel, Skor = x.Skor, Alasan = x.Alasan, IdPenilaian = x.IdPenilaian }).ToListAsync();
+
+            ViewBag.indikator = indikator;
+            ViewBag.penilaian = penilaian;
+
+            return View();
+        }
+
         // GET:
         public async Task<ActionResult> Profil(string id)
         {
